@@ -16,7 +16,7 @@ function Out() {
       <Top />
 
       <div className={stl.container} id="shadow">
-        <h1 className="text-[30px] md:text-[37px] font-bold">See you, take care</h1>
+        <h1 className="text-[30px] md:text-[37px] font-bold">See you,</h1>
         <div className={stl.note}>
           <img src={checked} alt="checkmark" className={stl.img} />
           <p className>You have clocked out successfully </p>

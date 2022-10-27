@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#shadow {
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 19px 19px 34px #c9c9c9, -19px -19px 34px #ffffff;
+}
+
+#input {
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: inset 5px 5px 9px #bebebe, inset -5px -5px 9px #ffffff;
+}

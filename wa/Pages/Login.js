@@ -1,12 +1,8 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { EmployeesContext } from "../context/employees";
+import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../Images/logo.svg";
 
-
 function Login() {
-  const { setAdmin } = useContext(EmployeesContext)
-  const navigate = useNavigate()
   let stl = {
     size: "w-full h-[100vh] text-txt flex flex-col items-center justify-center",
     logo: "w-[180px] h-[80px] object-contain ",
@@ -17,31 +13,10 @@ function Login() {
     btn: "w-[150px] h-[50px] md:w-[180px] md:h-[70px] bg-secondary text-[22px]  md:text-[24px] text-white hover:bg-white hover:text-secondary hover:border-secondary hover:border-2 duration-700 hover:duration-700 rounded-md mb-[30px]",
     btm: "w-[70%] mt-[-40px] mb-[80px] h-fit flex justify-between",
   };
-
-  const myfunc = (e) => {
-
-
-    e.preventDefault()
-    const email = e.target[0].value
-    const password = e.target[1].value
-
-    if (email === "abdulaziztojibayev6@gmail.com" && password === "3676921") {
-      setAdmin(true)
-      navigate("/admin")
-    } else {
-      setAdmin(false)
-      navigate("/admin")
-    }
-
-
-
-
-  }
-
   return (
     <div className={stl.size}>
       <img src={logo} alt="Logo" className={stl.logo} />
-      <form onSubmit={myfunc} className={stl.container} id="shadow">
+      <div className={stl.container} id="shadow">
         <h1 className="text-[30px] md:text-[37px] font-bold my-[35px]">
           Welcome back!
         </h1>
@@ -61,10 +36,10 @@ function Login() {
           <p>Forgot your password?</p>
         </div>
 
-
-        <button className={stl.btn}>Login</button>
-
-      </form>
+        <Link to="">
+          <button className={stl.btn}>Login</button>
+        </Link>
+      </div>
     </div>
   );
 }

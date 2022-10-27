@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Top from "../Components/Top";
 import checked from "../Images/checkmark.webp";
 
-function Out() {
+function In() {
   let stl = {
     size: "w-full h-[100vh] text-txt",
     container:
@@ -16,14 +17,18 @@ function Out() {
       <Top />
 
       <div className={stl.container} id="shadow">
-        <h1 className="text-[30px] md:text-[37px] font-bold">See you, take care</h1>
+        <h1 className="text-[30px] md:text-[37px] font-bold">Hello,</h1>
         <div className={stl.note}>
           <img src={checked} alt="checkmark" className={stl.img} />
-          <p className>You have clocked out successfully </p>
+          <p className>You have clocked in successfully </p>
         </div>
+
+        <Link to="/clocked_out">
+          <button className={stl.btn}>Clock out</button>
+        </Link>
       </div>
     </div>
   );
 }
 
-export default Out;
+export default In;

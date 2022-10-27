@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Top from "../Components/Top";
+import { EmployeesContext } from "../context/employees";
 import checked from "../Images/checkmark.webp";
 
+
 function In() {
+  const { employee } = useContext(EmployeesContext)
+  console.log(employee[0])
+
   let stl = {
     size: "w-full h-[100vh] text-txt",
     container:
@@ -17,7 +22,7 @@ function In() {
       <Top />
 
       <div className={stl.container} id="shadow">
-        <h1 className="text-[30px] md:text-[37px] font-bold">Hello,</h1>
+        <h1 className="text-[30px] md:text-[37px] font-bold">Hello, {employee[0]?.name}</h1>
         <div className={stl.note}>
           <img src={checked} alt="checkmark" className={stl.img} />
           <p className>You have clocked in successfully </p>
