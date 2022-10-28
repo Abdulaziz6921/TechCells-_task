@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { EmployeesContext } from "../context/employees";
 import logo from "../Images/logo.svg";
 
-
 function Login() {
-  const { setAdmin } = useContext(EmployeesContext)
-  const navigate = useNavigate()
+  const { setAdmin } = useContext(EmployeesContext);
+  const navigate = useNavigate();
   let stl = {
     size: "w-full h-[100vh] text-txt flex flex-col items-center justify-center",
     logo: "w-[180px] h-[80px] object-contain ",
@@ -19,24 +18,18 @@ function Login() {
   };
 
   const myfunc = (e) => {
-
-
-    e.preventDefault()
-    const email = e.target[0].value
-    const password = e.target[1].value
+    e.preventDefault();
+    const email = e.target[0].value;
+    const password = e.target[1].value;
 
     if (email === "abdulaziztojibayev6@gmail.com" && password === "3676921") {
-      setAdmin(true)
-      navigate("/admin")
+      setAdmin(true);
+      navigate("/admin");
     } else {
-      setAdmin(false)
-      navigate("/admin")
+      setAdmin(false);
+      navigate("/admin");
     }
-
-
-
-
-  }
+  };
 
   return (
     <div className={stl.size}>
@@ -61,9 +54,7 @@ function Login() {
           <p>Forgot your password?</p>
         </div>
 
-
         <button className={stl.btn}>Login</button>
-
       </form>
     </div>
   );
